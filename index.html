@@ -44,7 +44,7 @@
         </ul>
       </nav>
       <div class="header_right">
-        <button class="search_button" aria-label="Search The Site">
+        <button aria-label="Open Search" class="search_open" aria-label="Search The Site">
           <svg
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +69,47 @@
           </svg>
         </button>
 
-        <!-- Socials -->
+    
+        <div class="search_drawer  ">
+          <button aria-label="Close Search" class="search_close">
+            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"/></svg>
+          </button>
+          <form action="" class="search_form">
+            <label for="search" class="search_label">Search the Site</label>
+      
+              <input
+                type="text"
+                id="seach"
+                class="search_input"
+                
+              />
+              <button aria-label="search" class="submit_button">
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="ionicon"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-miterlimit="10"
+                    stroke-width="32"
+                  />
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-miterlimit="10"
+                    stroke-width="32"
+                    d="M338.29 338.29L448 448"
+                  />
+                </svg>
+              </button>
+          </form>
+        </div>
+            <!-- Socials -->
         <nav class="social_nav">
           <ul>
             <li class="social_item">
@@ -120,48 +160,11 @@
             </li>
           </ul>
         </nav>
-        <div class="search_drawer">
-          <form action="" class="search_form">
-            <label for="search" class="access-hidden">Seach the Site</label>
-            <input type="search" />
-            <input
-              type="text"
-              id="seach"
-              class="search_input"
-              placeholder="Search the Site"
-            />
-            <button aria-label="search" class="search_button">
-              <svg
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                class="ionicon"
-                viewBox="0 0 512 512"
-              >
-                <path
-                  d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-miterlimit="10"
-                  stroke-width="32"
-                />
-                <path
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-miterlimit="10"
-                  stroke-width="32"
-                  d="M338.29 338.29L448 448"
-                />
-              </svg>
-            </button>
-          </form>
-        </div>
-      </div>
     </header>
     <main class="main">
       <!-- Slider -->
       <section class="slider">
-        <div class="slider_contenr">
+        <div class="container">
           <h2 class="slider_heading">Reach and Grow</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
@@ -362,7 +365,6 @@
       <!-- overlay with hover section -->
 
       <section class="overlay_hover-section">
-        section class="three_card-section">
         <div class="content_header">
           <h2 class="secondary-heading">Featured Works</h2>
           <p>
