@@ -62,6 +62,8 @@ p:last-of-type {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+  background-color: var(--white);
+  z-index: 1;
 }
 
 /* Header */
@@ -72,6 +74,8 @@ p:last-of-type {
   justify-content: space-around;
   align-items: center;
   padding: 1rem;
+  position: sticky;
+  inset: 0;
 }
 .button {
   font-family: "Outfit", sans-serif;
