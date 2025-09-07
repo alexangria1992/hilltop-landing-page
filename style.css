@@ -54,7 +54,7 @@ p:last-of-type {
   margin: 0;
 }
 
-a {
+a:not(.content_link):not(.button) {
   text-decoration: none;
   color: var(--maron);
   border-bottom: 2px solid transparent;
@@ -62,9 +62,9 @@ a {
   transition: border-bottom 300ms ease-in-out;
 }
 
-a:hover,
-a:active,
-a:focus {
+a:not(.content_link):not(.button):hover,
+a:not(.content_link):not(.button):active,
+a:not(.content_link):not(.button):focus {
   border-bottom: 2px solid var(--maron);
 }
 
@@ -555,6 +555,10 @@ blockquote {
   padding: 0 3rem;
 }
 
+.dark_section .content_description p {
+  font-size: 1.1rem;
+}
+
 .dark_section .secondary-heading {
   margin: 0 0 1rem;
   text-transform: uppercase;
@@ -716,4 +720,21 @@ blockquote {
 .form .button:focus {
   background-color: transparent;
   color: var(--black);
+}
+
+/* Footer */
+
+.footer {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.footer .social_nav ul {
+  justify-content: center;
+}
+
+.copyright:last-of-type {
+  margin: 2rem 0 0;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
