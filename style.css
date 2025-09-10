@@ -154,6 +154,11 @@ blockquote {
   color: var(--white);
 }
 
+@media (max-width: 1024px) {
+  .button {
+    padding: 0.75rem 1rem;
+  }
+}
 .content_header {
   max-width: 80ch;
   margin: 0 auto 3rem;
@@ -223,10 +228,10 @@ blockquote {
   line-height: 1;
 }
 
-/* .social_item a {
+.social_item a {
   display: block;
   padding: 11.5px;
-} */
+}
 
 .social_item a:link,
 .social_item a:visited {
@@ -235,6 +240,13 @@ blockquote {
   border-bottom: none;
 }
 
+.social_item svg {
+  display: block;
+  width: 25px;
+  height: 25px;
+  fill: var(--black);
+  transition: fill 300ms ease-in-out;
+}
 /* .social_item a:focus,
 .social_item a:hover,
 .social_item a:active {
@@ -314,6 +326,7 @@ blockquote {
   }
 
   .main_nav {
+    visibility: hidden;
     position: fixed;
     top: 0;
     right: -300px;
@@ -329,6 +342,7 @@ blockquote {
   .main_nav.active {
     right: 0;
     box-shadow: -1px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    visibility: visible;
   }
 
   .main_nav ul {
@@ -342,18 +356,18 @@ blockquote {
   opacity: 0;
   position: fixed;
   inset: 0;
-  background-color: var(--black);
-  color: var(--lt-gray);
   width: 100%;
   height: 100vh;
-  overflow: hidden;
-  z-index: 3;
-  transition: opacity 300ms ease-in-out;
+  padding: 0 1rem;
+  display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  display: flex;
-  padding: 0 1rem;
+  background-color: var(--black);
+  color: var(--lt-gray);
+  overflow: hidden;
+  z-index: 3;
+  transition: opacity 300ms ease-in-out;
 }
 
 .search_drawer.active {
@@ -362,10 +376,9 @@ blockquote {
 }
 .search_close,
 .search_open {
-  padding: 0;
+  padding: 11.5px;
   border: none;
   background-color: transparent;
-  padding: 11.5px;
   cursor: pointer;
 }
 
@@ -377,44 +390,56 @@ blockquote {
   stroke: var(--black);
 }
 
+.search_close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 3;
+}
+
+.search_close svg {
+  width: 4rem;
+  height: 4rem;
+  stroke: var(--white);
+}
+
 .search_form {
+  position: relative;
   width: 50rem;
   max-width: 100%;
-  position: relative;
 }
 
 .search_label {
   display: block;
-  font-size: 2rem;
-  margin: 0 0 0.25rem;
   font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 2rem;
   color: var(--yellow);
+  margin: 0 0 0.25rem;
 }
 
 .search_input {
   width: 100%;
-  padding: 1rem;
   height: 55px;
   padding: 1rem;
 }
 
 .submit_button {
-  border: 0;
-  background-color: transparent;
-  position: absolute;
-  bottom: 0;
-  right: 0;
   display: block;
   width: 55px;
   height: 55px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border: 0;
+  background-color: transparent;
 }
 
 .submit_button svg {
   display: block;
   width: 25px;
   height: 25px;
-  stroke: var(--black);
   margin: auto;
+  stroke: var(--black);
 }
 
 .search_close {
@@ -452,7 +477,7 @@ blockquote {
 }
 
 .slider_content::after {
-  content: "";
+  content: ""; /* must have content */
   position: absolute;
   border: 2px solid var(--yellow);
 
@@ -461,6 +486,7 @@ blockquote {
   width: calc(100% - 4rem);
   height: calc(100% - 4rem);
   pointer-events: none;
+  /* z-index: 9999; */
 }
 
 .slider_content p {
@@ -550,6 +576,27 @@ blockquote {
   object-fit: cover;
 }
 
+@media (max-width: 1024px) {
+  .slider_content {
+    position: static;
+    transform: translate(0, 0);
+    width: 100%;
+    padding: 2rem 2rem 3rem;
+  }
+
+  .slider_content::after {
+    top: 1rem;
+    left: 1rem;
+    width: calc(100% - 2rem);
+    height: calc(100% - 2rem);
+  }
+
+  .slider .image {
+    margin: 3rem 0 0;
+    aspect-ratio: 16/9;
+  }
+}
+
 /* three card section */
 .three_card-section {
   padding: 4rem 1rem;
@@ -612,6 +659,7 @@ blockquote {
   justify-content: flex-start;
   align-items: center;
   gap: 0.25rem;
+  /* white-space: nowrap; */
 }
 
 .three_card-section .content_link svg {
@@ -625,6 +673,45 @@ blockquote {
 .three_card-section .content_link:active > svg,
 .three_card-section .content_link:focus > svg {
   transform: translateX(0.5rem);
+}
+
+@media (max-width: 960px) {
+  .three_card-section .wrap {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  .three_card-section .content_item {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 0 2rem;
+  }
+
+  .three_card-section .image,
+  .three_card-section .content_description {
+    width: calc((100% - 1rem) / 2);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .three_card-section .content_item {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 0;
+    margin: 0 0 1rem;
+  }
+
+  .three_card-section .image,
+  .three_card-section .content_description {
+    width: 100%;
+  }
+
+  .three_card-section .image {
+    aspect-ratio: 1.17 /1;
+  }
 }
 
 /* dark section */
@@ -830,6 +917,7 @@ blockquote {
 .footer {
   padding: 4rem 1rem;
   text-align: center;
+  position: relative;
 }
 
 .footer .social_nav ul {
