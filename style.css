@@ -506,7 +506,7 @@ blockquote {
   font-size: clamp(1.25rem, 3vw, 2rem);
 }
 
-.slider-controls {
+.slider_controls {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -909,6 +909,16 @@ blockquote {
 .testimonial_slider-section .slider_button:hover > svg,
 .testimonial_slider-section .slider_button:active > svg {
   stroke: var(--black);
+}
+
+@media screen and (max-width: 960px) {
+  .testimonial_slider-section {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .testimonial_slider-section .slider_controls {
+    align-items: flex-end;
+  }
 }
 
 /* Contact Form */
