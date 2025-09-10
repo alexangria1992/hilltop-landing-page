@@ -844,6 +844,28 @@ blockquote {
   letter-spacing: 2px;
 }
 
+@media (max-width: 1200px) {
+  .overlay_container {
+    flex-wrap: wrap;
+  }
+
+  .overlay_item {
+    width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .overlay_item {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .overlay_hover-section .item_content {
+    width: 90%;
+  }
+}
+
 /*  Testimonial Slider */
 .testimonial_slider-section {
   padding: 4rem 1rem;
