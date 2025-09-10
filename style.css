@@ -944,6 +944,7 @@ blockquote {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 .contact_section .form {
   width: 50%;
@@ -966,6 +967,48 @@ blockquote {
 .form .button:focus {
   background-color: transparent;
   color: var(--black);
+}
+
+.google_map,
+.contact_section .form {
+  width: 100%;
+  height: auto;
+  aspect-ratio: unset;
+}
+
+.contact_section .form {
+  padding: 2rem;
+}
+
+@media (max-width: 1200px) {
+  .contact_section {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 960px) {
+  .contact_section {
+    flex-wrap: wrap;
+  }
+
+  .google_map {
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
+
+  .google_map iframe {
+    display: block;
+  }
+  .contact_section .form {
+    width: 100%;
+    padding: 2rem 4rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .contact_section .form {
+    padding: 0 2rem 2rem;
+  }
 }
 
 /* Footer */
