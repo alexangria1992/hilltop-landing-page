@@ -54,6 +54,7 @@
       </nav>
       <div class="header_right">
         <button
+          aria-controls="searchDrawer"
           aria-label="Open Search"
           class="search_open"
           aria-label="Search The Site"
@@ -99,7 +100,7 @@
               />
             </svg>
           </button>
-          <form action="" class="search_form">
+          <form id="searchDrawer" action="" class="search_form" action="#">
             <label for="search" class="search_label">Search the Site</label>
 
             <input type="search" id="search" class="search_input" />

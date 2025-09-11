@@ -390,12 +390,16 @@ blockquote {
   visibility: visible;
   opacity: 1;
 }
+
 .search_close,
 .search_open {
   padding: 11.5px;
   border: none;
   background-color: transparent;
   cursor: pointer;
+}
+.search_open.active {
+  visibility: hidden;
 }
 
 .search_close svg,
