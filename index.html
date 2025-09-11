@@ -11,39 +11,44 @@
     />
     <link rel="stylesheet" href="normalize.css" />
     <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
     <title>Document</title>
   </head>
   <body>
     <header class="header">
       <h1 class="primary-logo">Hilltop</h1>
-      <button class="mobile_button mobile_open" aria-label="Open Menu">
-        <div></div>
-        <div></div>
-        <div></div>
+      <button
+        aria-controls="mainNavigation"
+        class="mobile_button mobile_open"
+        aria-label="Open Menu"
+      >
+        <div aria-hidden="true"></div>
+        <div aria-hidden="true"></div>
+        <div aria-hidden="true"></div>
       </button>
-      <nav class="main_nav">
+      <nav id="mainNavigation" class="main_nav">
         <button class="mobile_button mobile_close" aria-label="Close Menu">
-          <div></div>
-          <div></div>
+          <div aria-hidden="true"></div>
+          <div aria-hidden="true"></div>
         </button>
         <ul>
           <li class="nav_item">
-            <a href="">Home</a>
+            <a href="/">Home</a>
           </li>
           <li class="nav_item">
-            <a href="">Portfolio</a>
+            <a href="/portfolio.html">Portfolio</a>
           </li>
           <li class="nav_item">
-            <a href="">Blog</a>
+            <a href="/blog.html">Blog</a>
           </li>
           <li class="nav_item">
-            <a href="">About</a>
+            <a href="/about.html">About</a>
           </li>
           <li class="nav_item">
-            <a href="">Service</a>
+            <a href="/service.html">Service</a>
           </li>
           <li class="nav_item">
-            <a href="">Contact</a>
+            <a href="/contact.html">Contact</a>
           </li>
         </ul>
       </nav>

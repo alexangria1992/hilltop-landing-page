@@ -54,8 +54,7 @@ p:last-of-type {
   margin: 0;
 }
 
-a:not(.content_link):not(.button):not(.social_item a):link,
-a:not(.content_link):not(.button):not(.social_item a):visited {
+a:not(.content_link):not(.button):not(.social_item a):link {
   text-decoration: none;
   color: var(--maron);
   border-bottom: 2px solid transparent;
@@ -275,7 +274,9 @@ blockquote {
 }
 
 /* Navigation */
-.mobile_button {
+/* Buttons are not displayed on desktop */
+.mobile_open,
+.mobile_close {
   display: none;
   border: none;
   padding: 11.5px;
@@ -292,6 +293,10 @@ blockquote {
 .main_nav {
   position: static;
   box-shadow: none;
+}
+
+.nav_item a:not(.content_link):not(.button):not(.social_item a).active {
+  border-bottom: 2px solid var(--maron);
 }
 
 .main_nav ul {
@@ -313,7 +318,18 @@ blockquote {
 }
 
 @media (max-width: 1024px) {
-  .mobile_button {
+  /*  open button displayed on mobile */
+  .mobile_open {
+    display: block;
+  }
+
+  /* when active button is hidden */
+  .mobile_open.active {
+    visibility: hidden;
+    pointer-events: none;
+  }
+  /* when active button is shown */
+  .mobile_close.active {
     display: block;
   }
 
